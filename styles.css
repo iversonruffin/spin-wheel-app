@@ -10,10 +10,15 @@ body {
   background: radial-gradient(circle at center, #111, #000);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   overflow: hidden;
   color: white;
+}
+
+#headerText{
+    margin-top: 20vh;
+    white-space: nowrap;
 }
 
 /* Spinner */
@@ -25,8 +30,8 @@ body {
 }
 
 #spinner {
-  width: 260px;
-  height: 260px;
+  width: 30vh;
+  height: 30vh;
   border-radius: 50%;
   background:
     conic-gradient(
@@ -41,6 +46,29 @@ body {
   transition: transform 2.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   box-shadow: 0 0 40px rgba(255, 0, 80, 0.4);
 }
+
+/* INFO button */
+#infoBtn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  z-index: 20;
+}
+
+#infoBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 
 /* PUSH button */
 #pushBtn {
@@ -69,13 +97,14 @@ body {
 }
 
 /* Modal */
-#modal {
+.modal {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .hidden {
@@ -105,3 +134,26 @@ body {
   color: white;
   cursor: pointer;
 }
+
+/* 425px and below */
+@media (max-width: 425px) {
+  
+  #headerText{
+    font-size: 3vh;
+  }
+}
+
+/* 375px and below */
+@media (max-width: 375px) {
+    #headerText{
+        font-size: 2.5vh;
+    }
+}
+
+/* 320px and below */
+@media (max-width: 320px) {
+    #headerText{
+        font-size: 2vh;
+    }
+}
+

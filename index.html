@@ -7,6 +7,22 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  
+  <img src="icons8-info-80.png" id="infoIcon" onclick="">
+
+  <div id="infoModal" class="modal hidden">
+    <div class="modal-content">
+        <p>
+        Tap <strong>PUSH</strong>.<br />
+        Something will happen.<br /><br />
+        Participate if you want.<br />
+        Pass if you don’t.
+        </p>
+        <button id="closeInfo">OK</button>
+    </div>
+  </div>
+
+  <h1 id="headerText">PUSH THE RED BUTTON!</h1>
 
   <div class="spinner-container">
     <div id="spinner"></div>
@@ -15,9 +31,10 @@
   <button id="pushBtn">PUSH</button>
 
   <!-- Modal -->
-  <div id="modal" class="hidden">
+  <div id="promptModal" class="modal hidden">
     <div class="modal-content">
       <p id="promptText"></p>
+      <p id="tootsiePopText"></p>
       <button id="closeModal">OK</button>
     </div>
   </div>
