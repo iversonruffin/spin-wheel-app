@@ -1,6 +1,7 @@
 const spinner = document.getElementById("spinner");
 const pushBtn = document.getElementById("pushBtn");
 const promptModal = document.getElementById("promptModal");
+const promptTitle = document.getElementById("promptTitle");
 const promptText = document.getElementById("promptText");
 const closeModal = document.getElementById("closeModal"); 
 let headerText = document.getElementById("headerText");  
@@ -56,11 +57,18 @@ const prompts = {
   greenFlag: "What's an instant green flag when meeting new people?",
   redFlag: "What's an instant red flag when meeting new people?",
   petPeeve: "What's your biggest pet peeve?",
-  lieDetector: "Tell us something about yourself and we'll guess if it's true or false. If it's false, take a drink!",
+  lieDetector: "Tell us something about yourself and we'll guess if it's true or false. Whoever guesses wrong, take a drink!",
   lastPhoto: "Show us the last photo you took on your phone and tell us the story behind it.",
   conspiracy: "What's a conspiracy theory you secretly think might be true?",
   pushAgain: "Push the button again!",
   panthersPlayoffs: "Will the Panthers make the playoffs this year? Take a drink for YES, two drinks for NO.",
+  colorCombo: "What color do you get from mixing red and blue?",
+  stripperName: "What's your stripper name?",
+  terribleJoke: {
+    title: "ICE BREAKER",
+    text: "Tell a terrible joke!"
+  },
+
   
 
 
@@ -81,9 +89,13 @@ pushBtn.addEventListener("click", () => {
 
   //waits for spin to finish before showing prompt
   setTimeout(() => {
-    prompt = promptValues[Math.floor(Math.random() * promptValues.length)];
+    prompt = promptValues["terribleJoke"];
+
+    if(prompt?.title){
+      promptTitle.textContent = prompt.title;
+    }
         
-    promptText.textContent = prompt;
+    promptText.textContent = prompt.text;
     promptModal.classList.remove("hidden");
     pushBtn.disabled = false;
   }, timeToWait);
